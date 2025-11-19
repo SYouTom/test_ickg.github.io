@@ -1,0 +1,82 @@
+
+:root {
+    --primary-color: #0056b3;
+    --secondary-color: #333;
+    --bg-light: #f9f9f9;
+    --text-color: #444;
+    --accent-color: #e74c3c;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 0; color: var(--text-color); line-height: 1.6;
+    display: flex; flex-direction: column; min-height: 100vh;
+}
+header {
+    background-color: var(--primary-color); color: white; padding: 4rem 0; text-align: center;
+    background-image: linear-gradient(rgba(0, 40, 85, 0.7), rgba(0, 40, 85, 0.8)), url('banner.jpg');
+    background-size: cover; background-position: center;
+}
+header h1 { margin: 0; font-size: 3rem; letter-spacing: 1px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+header h2 { margin: 10px 0 0; font-weight: 400; font-size: 1.5rem; opacity: 0.95; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
+
+/* NAVIGATION & DROPDOWN */
+nav { background: #2c3e50; position: sticky; top: 0; z-index: 1000; }
+nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; }
+nav ul li { position: relative; }
+nav ul li a { 
+    display: block; padding: 15px 25px; color: white; text-decoration: none; 
+    font-weight: 600; transition: background 0.3s; text-transform: uppercase; font-size: 0.9rem; 
+}
+nav ul li a:hover, nav ul li a.active { background: #34495e; border-bottom: 4px solid var(--accent-color); }
+
+.dropdown-content {
+    display: none; position: absolute; background-color: #2c3e50;
+    min-width: 220px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index: 1001; top: 100%; left: 0; text-align: left;
+}
+.dropdown-content li { width: 100%; }
+.dropdown-content li a { padding: 12px 20px; text-transform: none; border-bottom: 1px solid #34495e; font-size: 0.95rem; }
+.dropdown-content li a:hover { background-color: #3e5871; }
+nav ul li:hover .dropdown-content { display: block; }
+
+/* LAYOUT */
+.container { display: flex; flex-wrap: wrap; max-width: 1200px; margin: 40px auto; padding: 0 20px; gap: 40px; flex: 1; }
+.main-content { flex: 3; min-width: 60%; }
+.sidebar { flex: 1; min-width: 250px; }
+h2.section-title { color: var(--primary-color); border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 0; }
+h3 { color: var(--secondary-color); margin-top: 25px; }
+ul.topic-list { padding-left: 20px; margin-bottom: 20px; }
+ul.topic-list li { margin-bottom: 8px; }
+.sidebar-box { background: var(--bg-light); padding: 25px; border-radius: 8px; border: 1px solid #eee; margin-bottom: 30px; }
+.sidebar-box h3 { color: var(--primary-color); margin-top: 0; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+.date-item { margin-bottom: 15px; display: flex; justify-content: space-between; }
+.date-value { color: var(--accent-color); font-weight: 700; }
+footer { background: #2c3e50; color: #ccc; text-align: center; padding: 30px 20px; margin-top: auto; }
+
+/* ORGANIZER LOGOS */
+.organizer-section { margin-top: 40px; border-top: 2px solid #eee; padding-top: 20px; }
+.organizer-logos { display: flex; gap: 30px; align-items: center; flex-wrap: wrap; }
+.organizer-logo-link { display: block; border: 1px solid #ddd; padding: 10px; border-radius: 5px; transition: transform 0.2s; background: white; }
+.organizer-logo-link:hover { transform: scale(1.05); border-color: var(--primary-color); }
+.organizer-img { height: 60px; width: auto; display: block; }
+
+/* COMMITTEE MEMBER STYLES */
+.committee-group { margin-bottom: 40px; }
+.committee-role-title { 
+    font-size: 1.3rem; font-weight: bold; color: var(--secondary-color); 
+    border-left: 5px solid var(--primary-color); padding-left: 15px; margin-bottom: 20px; background: #f0f4f8; padding: 10px 15px;
+}
+.member-grid { display: flex; flex-wrap: wrap; gap: 25px; }
+.member-card { 
+    display: flex; align-items: center; gap: 20px; width: 100%; max-width: 480px; 
+    background: white; border: 1px solid #eee; padding: 20px; border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: transform 0.2s;
+}
+.member-card:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-color: var(--primary-color); }
+.member-photo { 
+    width: 90px; height: 90px; border-radius: 50%; object-fit: cover; 
+    border: 3px solid #eef; background-color: #ddd; flex-shrink: 0;
+}
+.member-info { display: flex; flex-direction: column; }
+.member-name { font-size: 1.15rem; font-weight: bold; color: var(--primary-color); text-decoration: none; margin-bottom: 5px; }
+.member-name:hover { text-decoration: underline; }
+.member-affil { font-size: 0.95rem; color: #555; font-style: italic; }
